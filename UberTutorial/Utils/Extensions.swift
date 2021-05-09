@@ -2,6 +2,31 @@ import UIKit
 
 extension UIView {
     
+    static func inputContainerView(image: UIImage, textField: UITextField) -> UIView {
+        let view = UIView()
+        let imageView = UIImageView()
+        imageView.image = image
+        imageView.alpha = 0.87
+        imageView.tintColor = .white
+        view.addSubview(imageView)
+        imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 30, height: 24)
+        imageView.centerY(inView: view)
+        
+        view.addSubview(textField)
+        textField.anchor(left: imageView.rightAnchor, right: view.rightAnchor, paddingLeft: 8)
+        textField.centerY(inView: imageView)
+        
+        let separatorView = UIView()
+        separatorView.backgroundColor = .lightGray
+        view.addSubview(separatorView)
+        separatorView.anchor(left: view.leftAnchor,
+                             bottom: view.bottomAnchor,
+                             right: view.rightAnchor,
+                             height: 0.75)
+        
+        return view
+    }
+    
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,
                 bottom: NSLayoutYAxisAnchor? = nil,
@@ -46,5 +71,21 @@ extension UIView {
     
     func centerY(inView view: UIView) {
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+}
+
+extension UITextField {
+    static func textField(withPlaceholder placeholder: String, isSecureTextEntry: Bool) -> UITextField {
+        let textField = UITextField()
+        textField.borderStyle = .none
+        textField.font = UIFont.systemFont(ofSize: 16)
+        textField.textColor = .white
+        textField.keyboardAppearance = .dark
+        textField.isSecureTextEntry = isSecureTextEntry
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                             attributes: [
+                                                                NSAttributedString.Key.foregroundColor : UIColor.lightGray
+                                                             ])
+        return textField
     }
 }
