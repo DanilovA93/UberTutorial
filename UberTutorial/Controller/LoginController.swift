@@ -55,6 +55,8 @@ class LoginController: UIViewController {
                                                     NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
                                                     NSAttributedString.Key.foregroundColor: UIColor.mainBlue
                                                   ]))
+        
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
         
         return button
@@ -64,6 +66,21 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    //MARK: - Selectors
+    
+    @objc func handleShowSignUp() {
+        let controller = SignUpController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    //MARK: Helper functions
+    
+    private func configureUI() {
+        configureNavigationBar()
+
         view.backgroundColor = .backgrooundColor
         
         view.addSubview(titleLabel)
@@ -91,7 +108,8 @@ class LoginController: UIViewController {
                                      height: 32)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
     }
 }
