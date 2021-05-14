@@ -14,6 +14,7 @@
 		8FD9D2BC264729D50021CC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD9D2BB264729D50021CC29 /* Assets.xcassets */; };
 		8FD9D2BF264729D50021CC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD9D2BD264729D50021CC29 /* LaunchScreen.storyboard */; };
 		8FD9D2D126481DD50021CC29 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9D2D026481DD50021CC29 /* Extensions.swift */; };
+		8FDF9485264F05130006B90E /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF9484264F05130006B90E /* AuthButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8FD9D2BE264729D50021CC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FD9D2C0264729D50021CC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FD9D2D026481DD50021CC29 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8FDF9484264F05130006B90E /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		8FD9D2CA26472A290021CC29 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8FDF9484264F05130006B90E /* AuthButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FD9D2B7264729D40021CC29 /* LoginController.swift in Sources */,
+				8FDF9485264F05130006B90E /* AuthButton.swift in Sources */,
 				8FD9D2D126481DD50021CC29 /* Extensions.swift in Sources */,
 				8FD9D2B3264729D40021CC29 /* AppDelegate.swift in Sources */,
 				8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */,

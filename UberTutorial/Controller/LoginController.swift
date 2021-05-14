@@ -32,14 +32,10 @@ class LoginController: UIViewController {
         return UITextField.textField(withPlaceholder: "Password", isSecureTextEntry: true)
     }()
     
-    private let logginButton: UIButton = {
-        let button = UIButton(type: .system)
+    private let logginButton: AuthButton = {
+        let button = AuthButton(type: .system)
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
-        button.backgroundColor = .mainBlue
-        button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return button
     }()
     
