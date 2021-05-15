@@ -104,7 +104,7 @@ class SignUpController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                print("Sign up error \(error)")
+                print("DEBUG: Sign up error \(error)")
                 return
             }
             
@@ -116,7 +116,7 @@ class SignUpController: UIViewController {
                           "password": password] as [String: Any]
             
             Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
-                print("Saved success")
+                print("DEBUG: Saved success")
             }
         }
     }
