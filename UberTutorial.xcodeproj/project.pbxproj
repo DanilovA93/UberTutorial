@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		8FD9D2D126481DD50021CC29 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9D2D026481DD50021CC29 /* Extensions.swift */; };
 		8FDF9485264F05130006B90E /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF9484264F05130006B90E /* AuthButton.swift */; };
 		8FDF9488264F31DC0006B90E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FDF9487264F31DC0006B90E /* GoogleService-Info.plist */; };
+		8FDF94D6265013920006B90E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF94D5265013920006B90E /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8FD9D2D026481DD50021CC29 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8FDF9484264F05130006B90E /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		8FDF9487264F31DC0006B90E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8FDF94D5265013920006B90E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		CBC00399E2D2FCDB4A0738C8 /* Pods-UberTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberTutorial.debug.xcconfig"; path = "Target Support Files/Pods-UberTutorial/Pods-UberTutorial.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				8FD9D2B6264729D40021CC29 /* LoginController.swift */,
 				8F650B842649BF5B00DFE178 /* SignUpController.swift */,
+				8FDF94D5265013920006B90E /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,7 +132,6 @@
 				CBC00399E2D2FCDB4A0738C8 /* Pods-UberTutorial.debug.xcconfig */,
 				4187939435842E3B2ED7ED1C /* Pods-UberTutorial.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +260,7 @@
 			files = (
 				8FD9D2B7264729D40021CC29 /* LoginController.swift in Sources */,
 				8FDF9485264F05130006B90E /* AuthButton.swift in Sources */,
+				8FDF94D6265013920006B90E /* HomeController.swift in Sources */,
 				8FD9D2D126481DD50021CC29 /* Extensions.swift in Sources */,
 				8FD9D2B3264729D40021CC29 /* AppDelegate.swift in Sources */,
 				8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */,
