@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5545EE1C42AC411143523226 /* Pods_UberTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51922DFDA36FD016BD559CBA /* Pods_UberTutorial.framework */; };
 		8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F650B842649BF5B00DFE178 /* SignUpController.swift */; };
+		8FCE1220265C38DD00602B35 /* LocationInputActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE121F265C38DD00602B35 /* LocationInputActivationView.swift */; };
 		8FD9D2B3264729D40021CC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9D2B2264729D40021CC29 /* AppDelegate.swift */; };
 		8FD9D2B7264729D40021CC29 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9D2B6264729D40021CC29 /* LoginController.swift */; };
 		8FD9D2BA264729D40021CC29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD9D2B8264729D40021CC29 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		4187939435842E3B2ED7ED1C /* Pods-UberTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberTutorial.release.xcconfig"; path = "Target Support Files/Pods-UberTutorial/Pods-UberTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		51922DFDA36FD016BD559CBA /* Pods_UberTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F650B842649BF5B00DFE178 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		8FCE121F265C38DD00602B35 /* LocationInputActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputActivationView.swift; sourceTree = "<group>"; };
 		8FD9D2AF264729D40021CC29 /* UberTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD9D2B2264729D40021CC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD9D2B6264729D40021CC29 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8FDF9484264F05130006B90E /* AuthButton.swift */,
+				8FCE121F265C38DD00602B35 /* LocationInputActivationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				8FDF94D6265013920006B90E /* HomeController.swift in Sources */,
 				8FD9D2D126481DD50021CC29 /* Extensions.swift in Sources */,
 				8FD9D2B3264729D40021CC29 /* AppDelegate.swift in Sources */,
+				8FCE1220265C38DD00602B35 /* LocationInputActivationView.swift in Sources */,
 				8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
