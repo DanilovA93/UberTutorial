@@ -29,8 +29,6 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
         enableLocationServices()
-        fetchUserData()
-        fetchDrivers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +71,7 @@ class HomeController: UIViewController {
     
     func checkIfUserIsLoggedIn() {
         if let _ = Auth.auth().currentUser?.uid {
-            configureUI()
+            configure()
         } else {
             let nav = UINavigationController(rootViewController: LoginController())
             nav.modalPresentationStyle = .fullScreen
@@ -93,6 +91,12 @@ class HomeController: UIViewController {
     }
     
     //MARK: Helper functions
+    
+    func configure() {
+        configureUI()
+        fetchUserData()
+        fetchDrivers()
+    }
     
     func configureUI() {
         configureMapVIew()

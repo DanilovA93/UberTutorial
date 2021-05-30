@@ -135,9 +135,11 @@ class SignUpController: UIViewController {
     
     private func uploadUserDataAndShowHomeController(uid: String, values: [String: Any]) {
         REF_USERS.child(uid).updateChildValues(values) { [weak self] (error, ref) in
-            guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController
-            else { return }
-            controller.configureUI()
+            guard let navVC = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else {
+                return
+            }
+            guard let homeVC = navVC.viewControllers.first as? HomeController else { return }
+            homeVC.configure()
             self?.dismiss(animated: true, completion: nil)
         }
     }
