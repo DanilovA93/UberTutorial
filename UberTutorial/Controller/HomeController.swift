@@ -14,6 +14,12 @@ class HomeController: UIViewController {
     private let locationInputView = LocationInputView()
     private let tablewView = UITableView()
     
+    private var fullName: String? {
+        didSet {
+            locationInputView.titleLabel.text = fullName
+        }
+    }
+    
     private final let locationInputViewHeight: CGFloat = 200
     
     //MARK: - Life cycle
@@ -22,6 +28,8 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
         enableLocationServices()
+        
+        fetchUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +38,12 @@ class HomeController: UIViewController {
     }
     
     //MARK: - API
+    
+    func fetchUserData() {
+        Service.shared.fetchUserData { fullName in
+            self.fullName = fullName
+        }
+    }
     
     func checkIfUserIsLoggedIn() {
         if let _ = Auth.auth().currentUser?.uid {
@@ -98,6 +112,7 @@ class HomeController: UIViewController {
         
         tablewView.register(LocationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tablewView.rowHeight = 60
+        tablewView.tableFooterView = UIView()
         
         let height = view.frame.height - locationInputViewHeight
         tablewView.frame = CGRect(x: 0,
@@ -156,12 +171,13 @@ extension HomeController: LocationInputActivationViewDelegate {
 extension HomeController: LocationInputViewDelegate {
     
     func dismissLocationInputView() {
-        locationInputView.removeFromSuperview()
-        
         UIView.animate(withDuration: 0.3) {
             self.locationInputView.alpha = 0
             self.tablewView.frame.origin.y = self.view.frame.height
+            
         } completion: { _ in
+            self.locationInputView.removeFromSuperview()
+
             UIView.animate(withDuration: 0.3) {
                 self.locationInputActivationView.alpha = 1
             }
@@ -169,11 +185,20 @@ extension HomeController: LocationInputViewDelegate {
     }
 }
 
-//MARK: UITableViewDelegate, UITableViewDataSource
+//MARK: UITableViewDelegate/DataSource
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "test"
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return section == 0 ? 2 : 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

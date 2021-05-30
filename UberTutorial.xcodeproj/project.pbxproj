@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5545EE1C42AC411143523226 /* Pods_UberTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51922DFDA36FD016BD559CBA /* Pods_UberTutorial.framework */; };
+		8F407D932663BE6B00114E4F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F407D922663BE6B00114E4F /* Service.swift */; };
 		8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F650B842649BF5B00DFE178 /* SignUpController.swift */; };
 		8F70A3C4265D98B200D2244B /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F70A3C3265D98B200D2244B /* LocationInputView.swift */; };
 		8FB35037265EE91900B378A4 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB35036265EE91900B378A4 /* LocationCell.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		4187939435842E3B2ED7ED1C /* Pods-UberTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberTutorial.release.xcconfig"; path = "Target Support Files/Pods-UberTutorial/Pods-UberTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		51922DFDA36FD016BD559CBA /* Pods_UberTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F407D922663BE6B00114E4F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8F650B842649BF5B00DFE178 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8F70A3C3265D98B200D2244B /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		8FB35036265EE91900B378A4 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		8FD9D2C826472A230021CC29 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8F407D922663BE6B00114E4F /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				8FD9D2B3264729D40021CC29 /* AppDelegate.swift in Sources */,
 				8FCE1220265C38DD00602B35 /* LocationInputActivationView.swift in Sources */,
 				8FB35037265EE91900B378A4 /* LocationCell.swift in Sources */,
+				8F407D932663BE6B00114E4F /* Service.swift in Sources */,
 				8F70A3C4265D98B200D2244B /* LocationInputView.swift in Sources */,
 				8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */,
 			);
