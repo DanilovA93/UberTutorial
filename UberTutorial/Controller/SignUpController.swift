@@ -1,9 +1,12 @@
 import UIKit
 import Firebase
+import GeoFire
 
 class SignUpController: UIViewController {
     
     //MARK: - Properties
+    
+    private var location = LocationHandler.shared.locationManager.location
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -89,7 +92,6 @@ class SignUpController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
     }
     
@@ -99,10 +101,9 @@ class SignUpController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let fullName = fullNameTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        
         let accountTypeIndex = accountTypeSegmentedControl.selectedSegmentIndex
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { [self] (result, error) in
             if let error = error {
                 print("DEBUG: Sign up error \(error)")
                 return
@@ -115,12 +116,14 @@ class SignUpController: UIViewController {
                           "accountType": accountTypeIndex,
                           "password": password] as [String: Any]
             
-            Database.database().reference().child("users").child(uid).updateChildValues(values) { [weak self] (error, ref) in
-                guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController
-                else { return }
-                controller.configureUI()
-                self?.dismiss(animated: true, completion: nil)
+            if accountTypeIndex == 1 {
+                let geofire = GeoFire(firebaseRef: REF_DRIVER_LOCATIONS)
+                guard let location = location else { return }
+                geofire.setLocation(location, forKey: uid) { error in
+                    uploadUserDataAndShowHomeController(uid: uid, values: values)
+                }
             }
+            uploadUserDataAndShowHomeController(uid: uid, values: values)
         }
     }
     
@@ -129,6 +132,15 @@ class SignUpController: UIViewController {
     }
     
     //MARK: Helper functions
+    
+    private func uploadUserDataAndShowHomeController(uid: String, values: [String: Any]) {
+        REF_USERS.child(uid).updateChildValues(values) { [weak self] (error, ref) in
+            guard let controller = UIApplication.shared.keyWindow?.rootViewController as? HomeController
+            else { return }
+            controller.configureUI()
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
     
     private func configureUI() {
         view.backgroundColor = .backgrooundColor
