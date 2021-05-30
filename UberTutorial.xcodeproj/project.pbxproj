@@ -11,6 +11,7 @@
 		8F407D932663BE6B00114E4F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F407D922663BE6B00114E4F /* Service.swift */; };
 		8F407D962663C51A00114E4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F407D952663C51A00114E4F /* User.swift */; };
 		8F407D992663D68400114E4F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F407D982663D68400114E4F /* LocationHandler.swift */; };
+		8F407D9C2663E75000114E4F /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F407D9B2663E75000114E4F /* DriverAnnotation.swift */; };
 		8F650B852649BF5B00DFE178 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F650B842649BF5B00DFE178 /* SignUpController.swift */; };
 		8F70A3C4265D98B200D2244B /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F70A3C3265D98B200D2244B /* LocationInputView.swift */; };
 		8FB35037265EE91900B378A4 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB35036265EE91900B378A4 /* LocationCell.swift */; };
@@ -32,6 +33,7 @@
 		8F407D922663BE6B00114E4F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8F407D952663C51A00114E4F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F407D982663D68400114E4F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		8F407D9B2663E75000114E4F /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		8F650B842649BF5B00DFE178 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8F70A3C3265D98B200D2244B /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		8FB35036265EE91900B378A4 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				8F407D952663C51A00114E4F /* User.swift */,
+				8F407D9B2663E75000114E4F /* DriverAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				8FDF9485264F05130006B90E /* AuthButton.swift in Sources */,
 				8FDF94D6265013920006B90E /* HomeController.swift in Sources */,
 				8F407D992663D68400114E4F /* LocationHandler.swift in Sources */,
+				8F407D9C2663E75000114E4F /* DriverAnnotation.swift in Sources */,
 				8FD9D2D126481DD50021CC29 /* Extensions.swift in Sources */,
 				8FD9D2B3264729D40021CC29 /* AppDelegate.swift in Sources */,
 				8FCE1220265C38DD00602B35 /* LocationInputActivationView.swift in Sources */,
