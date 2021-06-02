@@ -24,8 +24,6 @@ struct Service {
         let geofire = GeoFire(firebaseRef: REF_DRIVER_LOCATIONS)
         REF_DRIVER_LOCATIONS.observe(.value) { (snapshot) in
             geofire.query(at: location, withRadius: 50).observe(.keyEntered, with: { (uid, location) in
-                print("uid is \(uid)")
-                print("location is \(location.coordinate)")
                 self.fetchUserData(uid: uid) { (user) in
                     var driver = user
                     driver.location = location

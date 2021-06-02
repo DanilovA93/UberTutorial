@@ -14,6 +14,7 @@ class HomeController: UIViewController {
     private let locationInputActivationView = LocationInputActivationView()
     private let locationInputView = LocationInputView()
     private let tablewView = UITableView()
+    private var searchResults = [MKPlacemark]()
     
     private var user: User? {
         didSet {
@@ -157,6 +158,29 @@ class HomeController: UIViewController {
     }
 }
 
+//MARK: - Map Helpers Functions
+
+private extension HomeController {
+    func serchBy(naturalLanguageQuery: String, completion: @escaping([MKPlacemark]) -> Void) {
+        var results = [MKPlacemark]()
+        
+        let request = MKLocalSearch.Request()
+        request.region = mapView.region
+        request.naturalLanguageQuery = naturalLanguageQuery
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            guard let response = response else { return }
+            
+            response.mapItems.forEach { item in
+                results.append(item.placemark)
+            }
+            
+            completion(results)
+        }
+    }
+}
+
 //MARK: MKMapViewDelegate
 
 extension HomeController: MKMapViewDelegate {
@@ -220,6 +244,13 @@ extension HomeController: LocationInputViewDelegate {
             }
         }
     }
+    
+    func executeSearch(query: String) {
+        serchBy(naturalLanguageQuery: query) { (results) in
+            self.searchResults = results
+            self.tablewView.reloadData()
+        }
+    }
 }
 
 //MARK: UITableViewDelegate/DataSource
@@ -235,11 +266,15 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 : 3
+        return section == 0 ? 2 : searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tablewView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! LocationCell
+        
+        if indexPath.section == 1 {
+            cell.placemark = searchResults[indexPath.row]
+        }
         
         return cell
     }

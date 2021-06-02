@@ -1,21 +1,27 @@
 import UIKit
+import MapKit
 
 class LocationCell: UITableViewCell {
     
     //MARK: - Properties
     
+    var placemark: MKPlacemark? {
+        didSet {
+            titleLabel.text = placemark?.name
+            addressLabel.text = placemark?.address
+        }
+    }
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "123 AB"
         return label
     }()
     
-    private let adressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
-        label.text = "321 BA"
         return label
     }()
     
@@ -26,7 +32,7 @@ class LocationCell: UITableViewCell {
         
         selectionStyle = .none
         
-        let stack = UIStackView(arrangedSubviews: [titleLabel, adressLabel])
+        let stack = UIStackView(arrangedSubviews: [titleLabel, addressLabel])
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = 4
