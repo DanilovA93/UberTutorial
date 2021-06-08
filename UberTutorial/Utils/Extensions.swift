@@ -150,3 +150,20 @@ extension MKPlacemark {
         }
     }
 }
+
+extension MKMapView {
+    func zoomToFit(annotations: [MKAnnotation]) {
+        var zoomRect = MKMapRect.null
+        
+        annotations.forEach { annotation in
+            let annotationPoin = MKMapPoint(annotation.coordinate)
+            let pointRect = MKMapRect(x: annotationPoin.x, y: annotationPoin.y,
+                                      width: 0.01, height: 0.01)
+            
+            zoomRect = zoomRect.union(pointRect)
+        }
+        
+        let insets = UIEdgeInsets(top: 50, left: 50, bottom: 325, right: 50)
+        setVisibleMapRect(zoomRect, edgePadding: insets, animated: true)
+    }
+}
