@@ -1,8 +1,16 @@
 import UIKit
+import MapKit
 
 class RideActionView: UIView {
     
     //MARK: - Properties
+    
+    var destination: MKPlacemark? {
+        didSet {
+            titleLabel.text = destination?.name
+            addressLabel.text = destination?.address
+        }
+    }
     
     private let titleLabel: UILabel = {
         let label = UILabel()
